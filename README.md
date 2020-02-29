@@ -13,6 +13,7 @@ git clone https://github.com/absonggit/lnmp.git
 cd lnmp
 vim .env
 --------------------------------------
+# 设置全局安装目录
 HOME_DIR=lnmp
 # nginx & php
 NGINX_IMAGE=nginx-php:v1
