@@ -2,12 +2,22 @@ version: '3'
 services:
   nginx:
     build: .
-    image: ${IMAGE}
+    image: ${NGINX_IMAGE}
+    user: root
+    depends_on:
+      - redis
     container_name: ${CONTAINER_NAME}
     ports:
-      - ${PORT}:80
+      - ${NGINX_PORT}:80
     volumes:
       - ${NGINX_CONF_DIR}:/usr/local/nginx/conf
       - ${PHP_ETC_DIR}:/usr/local/php/etc 
       - ${WEB_HOME_DIR}:/home/wwwroot
     restart: unless-stopped
+
+  redis:
+    image: ${REDIS_IMAGE}
+    user: root
+  ports:
+    - ${REDIS_PORT}:6379
+  restart: unless-stopped
