@@ -1,0 +1,13 @@
+version: '3'
+services:
+  nginx:
+    build: .
+    image: ${IMAGE}
+    container_name: ${CONTAINER_NAME}
+    ports:
+      - ${PORT}:80
+    volumes:
+      - ${NGINX_CONF_DIR}:/usr/local/nginx/conf
+      - ${PHP_ETC_DIR}:/usr/local/php/etc 
+      - ${WEB_HOME_DIR}:/home/wwwroot
+    restart: unless-stopped
