@@ -6,6 +6,7 @@ services:
     user: root
     depends_on:
       - redis
+      - mysql
     container_name: nginx-php
     ports:
       - ${NGINX_PORT}:80
@@ -22,3 +23,13 @@ services:
     ports:
       - ${REDIS_PORT}:6379
     restart: unless-stopped
+
+  mysql:
+    image: ${MYSQL_IMAGE}
+    user: root
+    container_name: mysql
+    ports:
+      - ${MYSQL_PORT}:3306
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
