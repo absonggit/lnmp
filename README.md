@@ -21,13 +21,17 @@ PHP_ETC_DIR=/root/lnmp/php/etc
 WEB_HOME_DIR=/root/lnmp/wwwroot
 
 # redis
-REDIS_IMAGE=redis:4.0.2
+REDIS_IMAGE=redis:v1
 REDIS_PORT=6379
+REDIS_CONF_FILE=/root/lnmp/redis/redis.conf
+REDIS_DATA_DIR=/root/lnmp/redis/data
 
 # mysql
 MYSQL_IMAGE=mysql:5.6.47
 MYSQL_PORT=3306
 MYSQL_ROOT_PASSWORD=123456
+MYSQL_CONF_FILE=/root/lnmp/mysql/my.cnf
+MYSQL_DATA_DIR=/root/lnmp/mysql/data
 --------------------------------------
 
 # build 镜像并启动
