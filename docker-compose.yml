@@ -1,7 +1,7 @@
 version: '3'
 services:
   nginx:
-    build: .
+    build: ./nginx/Dockerfile
     image: ${NGINX_IMAGE}
     user: root
     depends_on:
@@ -17,11 +17,15 @@ services:
     restart: unless-stopped
 
   redis:
+    build: ./redis/Dockerfile
     image: ${REDIS_IMAGE}
     user: root
     container_name: redis
     ports:
       - ${REDIS_PORT}:6379
+    volumes:
+      - ${NGINX_CONF_DIR}:/usr/local/nginx/conf
+      - ${REDIS_DATA_DIR}:/data
     restart: unless-stopped
 
   mysql:
