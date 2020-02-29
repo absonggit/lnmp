@@ -1,8 +1,3 @@
-[client]
-#password	= your_password
-port		= 3306
-socket		= /run/mysqld/mysqld.sock
-
 [mysqld]
 port		= 3306
 socket		= /run/mysqld/mysqld.sock
