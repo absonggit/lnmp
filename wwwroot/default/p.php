@@ -623,7 +623,6 @@ function displayData(dataJSON)
 <div id="page">
     <div id="header">
         <h1>PHP探针</h1>
-        <div id="lnmplink">for <a href="https://lnmp.org" target="_blank">LNMP一键安装包</a> <a href="https://bbs.vpser.net/forum-25-1.html" target="_blank">LNMP支持论坛</a></div>
     </div>
 
 <!--服务器相关参数-->
@@ -1151,7 +1150,7 @@ else
 <a id="bottom"></a>
 
 <div id="footer">
-&copy; 2012 <a href="https://lnmp.org" target="_blank">LNMP一键安装包</a><br />This Prober was based on Yahei Prober.<br />
+&copy; 2020 <a href="https://github.com/absonggit/lnmp" target="_blank">LNMP-DOCKER</a>
 <?php $run_time = sprintf('%0.4f', microtime_float() - $time_start);?>
 Processed in <?php echo $run_time?> seconds. <?php echo memory_usage();?> memory usage.
 
