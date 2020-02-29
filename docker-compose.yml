@@ -34,6 +34,10 @@ services:
     container_name: mysql
     ports:
       - ${MYSQL_PORT}:3306
+    volumes:
+      - ${REDIS_CONF_FILE}:/etc/mysql/conf.d/mysql.cnf
+      - ${MYSQL_DATA_DIR}:/var/lib/mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      
