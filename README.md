@@ -1,4 +1,4 @@
-# Docker 部署lnmp环境
+# Docker 部署lnmp环境 by wayne
 ```shell
 # 安装docker
 curl -fsSL https://get.docker.com | sh -
