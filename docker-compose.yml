@@ -11,9 +11,9 @@ services:
     ports:
       - ${NGINX_PORT}:80
     volumes:
-      - ${HOME_DIR}${NGINX_CONF_DIR}:/usr/local/nginx/conf
-      - ${HOME_DIR}${PHP_ETC_DIR}:/usr/local/php/etc 
-      - ${HOME_DIR}${WEB_HOME_DIR}:/home/wwwroot
+      - ${HOME_DIR}/nginx/conf:/usr/local/nginx/conf
+      - ${HOME_DIR}/php/etc:/usr/local/php/etc 
+      - ${HOME_DIR}/wwwroot:/home/wwwroot
     restart: unless-stopped
 
   redis:
@@ -24,8 +24,8 @@ services:
     ports:
       - ${REDIS_PORT}:6379
     volumes:
-      - ${HOME_DIR}${REDIS_CONF_FILE}:/usr/local/etc/redis.conf
-      - ${HOME_DIR}${REDIS_DATA_DIR}:/data
+      - ${HOME_DIR}/redis/redis.conf:/usr/local/etc/redis.conf
+      - ${HOME_DIR}/redis/data:/data
     restart: unless-stopped
 
   mysql:
@@ -35,8 +35,8 @@ services:
     ports:
       - ${MYSQL_PORT}:3306
     volumes:
-      - ${HOME_DIR}${REDIS_CONF_FILE}:/etc/mysql/conf.d/my.cnf
-      - ${HOME_DIR}${MYSQL_DATA_DIR}:/var/lib/mysql
+      - ${HOME_DIR}/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ${HOME_DIR}/mysql/data:/var/lib/mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
